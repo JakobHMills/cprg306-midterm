@@ -15,11 +15,15 @@ const FormExam = () => {
   };
 
   const handleSubmit = (event) => {
-    if (fullname === "") {
-      setFullname(firstname + " " + surname);
-    } else {
-      setFullname("");
+    event.preventDefault();
+  
+    if (firstname.trim() !== "" && surname.trim() !== "") {
+      const newFullname = `${firstname.trim()} ${surname.trim()}`;
+  
+      setFullname(newFullname);
     }
+  };
+  
 
     console.log("name: ", firstname, surname);
   };
